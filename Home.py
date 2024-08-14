@@ -1,25 +1,36 @@
 import streamlit as st
-from st_pages import Page, add_page_title, show_pages
+from st_pages import Page, add_page_title, get_nav_from_toml
 
 
 
 
 def show_home():
-    show_pages(
-        [
-            Page("Home.py", "Home", "🏠"),
-            # Can use :<icon-name>: or the actual icon
-            Page("pages/1_❄️_Ask_Question.py", "Ask Question", ":books:"),
-            # # The pages appear in the order you pass them
-            Page("pages/03_Compare_Your_PDF_FAISS.py", "Compare PDFs", "📖"),
-            # Page("example_app/example_two.py", "Example Two", "✏️"),
-            # # Will use the default icon and name based on the filename if you don't
-            # # pass them
-            # Page("example_app/example_three.py"),
-            # Page("example_app/example_five.py", "Example Five", "🧰"),
-        ])
+    sections = st.sidebar.toggle("Sections", value=True, key="use_sections")
+    nav = get_nav_from_toml(
+    ".streamlit/pages.toml" if sections else ".streamlit/pages.toml"
+    )
+    pg = st.navigation(nav)
 
-    st.title('DocuMentor')
+    add_page_title(pg)
+
+    pg.run()
+    # show_pages(
+
+
+    #     [
+    #         Page("Home.py", "Home", "🏠"),
+    #         # Can use :<icon-name>: or the actual icon
+    #         Page("pages/1_❄️_Ask_Question.py", "Ask Question", ":books:"),
+    #         # # The pages appear in the order you pass them
+    #         Page("pages/03_Compare_Your_PDF_FAISS.py", "Compare PDFs", "📖"),
+    #         # Page("example_app/example_two.py", "Example Two", "✏️"),
+    #         # # Will use the default icon and name based on the filename if you don't
+    #         # # pass them
+    #         # Page("example_app/example_three.py"),
+    #         # Page("example_app/example_five.py", "Example Five", "🧰"),
+    #     ])
+
+    # st.title('DocuMentor')
     st.markdown("-------")
     st.caption("Made with 🖤 by Ziwen Ming", unsafe_allow_html=True)
     # Use a smaller, more relevant banner image
