@@ -145,7 +145,7 @@ if "current_page" not in st.session_state or st.session_state.current_page != "d
     st.session_state.current_page = "document_comparison"
     st.session_state.messages = []
 
-st.title("💬 Compare Your Documents")
+# st.title("💬 Compare Your Documents")
 st.info("""
     This page supports the comparison of two PDF documents and queries regarding multiple PDFs.
     If you wish to focus on querying within a single PDF, please use the 'Ask Question' page.

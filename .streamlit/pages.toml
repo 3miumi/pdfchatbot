@@ -5,12 +5,12 @@ path = "DocuMentor.py"
 
 [[pages]]
 path = "1_Ask_Question.py"
-name = "Ask_Question"
-icon = ":books:"
+name = "Ask Question"
+icon = "💬"
 
 
 
 [[pages]]
 path = "03_Compare_Your_PDF_FAISS.py"
-name = "Compare_Your_PDFs"
+name = "Compare Your Documents"
 icon = "📖"

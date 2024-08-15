@@ -18,7 +18,7 @@ from collections import defaultdict
 if "current_page" not in st.session_state or st.session_state.current_page != "ask_questions":
     st.session_state.current_page = "ask_questions"
     st.session_state.messages = []
-st.title("💬 PDF Question Page")
+# st.title("💬 PDF Question Page")
 if "messages" not in st.session_state:
     st.session_state.messages = []
 if "uploader_key" not in st.session_state:
@@ -72,7 +72,7 @@ if st.session_state.user_api_key:
     # Now use OPENAI_API_KEY for your API calls
 else:
     st.sidebar.error("Please enter your API key.")
-    
+     
 
 
 
