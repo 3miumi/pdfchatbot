@@ -5,6 +5,8 @@ from st_pages import Page, add_page_title, get_nav_from_toml
 
 
 def show_home():
+    st.set_page_config(layout="wide")
+
     sections = st.sidebar.toggle("Sections", value=True, key="use_sections")
     nav = get_nav_from_toml(
     ".streamlit/pages.toml" if sections else ".streamlit/pages.toml"
